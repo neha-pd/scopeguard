@@ -1,0 +1,16 @@
+{
+  "base_url": "http://localhost:8838",
+  "checks": [
+    "Shared-word reference and unmatched request; all decisions initially require review",
+    "Manual decisions feed draft; missing pricing never becomes an invented quote",
+    "Negative and incomplete pricing rejected; valid user hours/rate calculate correctly",
+    "Clipboard and downloaded text exactly match visible draft",
+    "Brief, decisions and estimates survive reload in local storage",
+    "Editing source disables draft export until comparison refreshed",
+    "Reset confirmation/cancel and persistent clearing",
+    "Untrusted request HTML renders as text, without script execution",
+    "Mobile 390px layout without horizontal overflow",
+    "No browser runtime or console errors"
+  ],
+  "errors": []
+}
