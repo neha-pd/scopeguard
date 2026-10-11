@@ -1,5 +1,5 @@
 {
-  "base_url": "http://localhost:8838",
+  "base_url": "http://127.0.0.1:8797",
   "checks": [
     "Shared-word reference and unmatched request; all decisions initially require review",
     "Manual decisions feed draft; missing pricing never becomes an invented quote",

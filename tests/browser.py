@@ -15,12 +15,12 @@ async def main():
   await page.get_by_role('button',name='Compare requests').click()
   assert await page.locator('article').count()==4
   assert 'Contact form with email notifications' in await page.locator('article').nth(0).inner_text()
-  assert await page.locator('#decision-0').input_value()=='review'
+  assert await page.locator('input[name="decision-0"]:checked').input_value()=='review'
   assert 'No clear keyword overlap' in await page.locator('article').nth(1).inner_text()
   checks.append('Shared-word reference and unmatched request; all decisions initially require review')
-  await page.locator('#decision-0').select_option('include')
-  await page.locator('#decision-1').select_option('change')
-  await page.locator('#decision-3').select_option('change')
+  await page.locator('input[name="decision-0"][value="include"]').check()
+  await page.locator('input[name="decision-1"][value="change"]').check()
+  await page.locator('input[name="decision-3"][value="change"]').check()
   await page.get_by_role('button',name='Prepare change-request draft').click()
   assert 'No complete estimate supplied' in await page.locator('#draft-text').input_value()
   checks.append('Manual decisions feed draft; missing pricing never becomes an invented quote')
@@ -43,7 +43,7 @@ async def main():
   assert Path(await download.path()).read_text()==draft
   checks.append('Clipboard and downloaded text exactly match visible draft')
   await page.reload(wait_until='networkidle')
-  assert await page.locator('#decision-1').input_value()=='change'
+  assert await page.locator('input[name="decision-1"]:checked').input_value()=='change'
   assert await page.locator('#hours-1').input_value()=='5'
   assert '$160.00' in await page.locator('.estimate-total').inner_text()
   checks.append('Brief, decisions and estimates survive reload in local storage')

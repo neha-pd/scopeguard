@@ -31,7 +31,7 @@ Static browser-native Vue 3 ESM with pinned vendored runtime. No build step, key
 
 - `src/core.js`: pure analysis, pricing validation and draft generation functions.
 - `src/app.js`: Vue state, local persistence and UI. User-entered content is rendered as text, never injected HTML.
-- `styles.css`: responsive paper/clay workspace.
+- `styles.css`: responsive cool paper workbench with light/dark tokens.
 - `tests/browser.py`: actual Chromium checks and screenshot capture.
 - `vendor/`: Vue version/source and upstream license.
 
@@ -76,3 +76,7 @@ A future consent-based model adapter would accept structured scope/request recor
 No adapter, provider credentials or semantic model exists in this release. Additional planned work: versioned scope snapshots, per-project storage, import/export of structured projects and broader browser/accessibility validation.
 
 MIT licensed. Vue/Manrope retain upstream licenses. Design direction informed by [taste-skill](https://github.com/leonxlnx/taste-skill).
+
+## Interface redesign
+
+The workspace now uses side-by-side source editors, explicit radio decisions and a persistent workflow rail. [Design references and decisions](DESIGN.md) document the original direction. All local analysis and commercial safeguards remain unchanged. Light/dark automated axe results are in `artifacts/axe.json`.
